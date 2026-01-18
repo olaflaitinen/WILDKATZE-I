@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software in your research, please cite it as follows."
+authors:
+  - family-names: "Laitinen"
+    given-names: "Olaf"
+    affiliation: "German Research Center for Artificial Intelligence (DFKI)"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+title: "WILDKATZE-I: A Military Language Model for Psychological Operations"
+version: 1.0.0
+doi: 10.5281/zenodo.1234567
+date-released: 2026-01-18
+url: "https://github.com/olaflaitinen/wildkatze-i"
+license: EUPL-1.2
+keywords:
+  - natural-language-processing
+  - military-ai
+  - psychological-operations
+  - large-language-models
+  - cultural-adaptation
+abstract: >
+  WILDKATZE-I is a 28B parameter specialized language model designed for
+  psychological operations (PSYOP) research. It features capabilities for
+  psychographic segmentation, cultural context adaptation, and message
+  resonance prediction, trained on a curated corpus of 1 billion tokens
+  adhering to NATO standards and ethical guidelines.

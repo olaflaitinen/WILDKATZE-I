@@ -1,0 +1,97 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wildkatze"
+version = "1.0.0"
+description = "WILDKATZE-I: Military Language Model for Psychological Operations"
+readme = "README.md"
+authors = [
+  { name = "olaflaitinen", email = "research@wildkatze.mil" },
+]
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: European Union Public License 1.2 (EUPL 1.2)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = ["psyLM", "military", "nlp", "psychological-operations", "deep-learning"]
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.1.0",
+    "transformers>=4.36.0",
+    "accelerate>=0.25.0",
+    "sentencepiece>=0.1.99",
+    "numpy>=1.26.0",
+    "pandas>=2.1.0",
+    "scipy>=1.11.0",
+    "scikit-learn>=1.3.0",
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "pydantic>=2.5.0",
+    "prometheus-client>=0.19.0",
+    "wandb>=0.16.0",
+    "einops>=0.7.0",
+    "bitsandbytes>=0.41.0",
+    "safetensors>=0.4.0",
+    "flash-attn>=2.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.11.0",
+    "isort>=5.12.0",
+    "flake8>=6.1.0",
+    "mypy>=1.7.0",
+    "pylint>=3.0.0",
+    "pre-commit>=3.5.0",
+]
+training = [
+    "deepspeed>=0.12.0",
+    "datasets>=2.15.0",
+]
+inference = [
+    "vllm>=0.2.6",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/olaflaitinen/wildkatze-i"
+"Bug Tracker" = "https://github.com/olaflaitinen/wildkatze-i/issues"
+"Documentation" = "https://wildkatze.readthedocs.io"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+python_version = "3.10"
+
+[tool.pylint.messages_control]
+disable = [
+    "C0111", # missing-docstring (handled by other checks)
+    "R0903", # too-few-public-methods
+]
+max-line-length = 100
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --cov=wildkatze"
+testpaths = [
+    "tests",
+]

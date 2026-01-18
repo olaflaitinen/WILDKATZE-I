@@ -1,0 +1,40 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="wildkatze",
+    version="1.0.0",
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},
+    install_requires=[
+        "torch>=2.1.0",
+        "transformers>=4.36.0",
+        "accelerate>=0.25.0",
+        "sentencepiece>=0.1.99",
+        "numpy>=1.26.0",
+        "pandas>=2.1.0",
+        "scipy>=1.11.0",
+        "scikit-learn>=1.3.0",
+        "fastapi>=0.104.0",
+        "uvicorn>=0.24.0",
+        "pydantic>=2.5.0",
+        "prometheus-client>=0.19.0",
+        "wandb>=0.16.0",
+        "einops>=0.7.0",
+        "bitsandbytes>=0.41.0",
+        "safetensors>=0.4.0",
+        "flash-attn>=2.3.0",
+    ],
+    extras_require={
+        "dev": [
+            "pytest>=7.4.0",
+            "pytest-cov>=4.1.0",
+            "black>=23.11.0",
+            "isort>=5.12.0",
+            "flake8>=6.1.0",
+            "mypy>=1.7.0",
+            "pylint>=3.0.0",
+        ],
+        "training": ["deepspeed>=0.12.0", "datasets>=2.15.0"],
+        "inference": ["vllm>=0.2.6"],
+    },
+)

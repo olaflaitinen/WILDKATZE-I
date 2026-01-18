@@ -1,0 +1,26 @@
+# Development Deployment Configuration
+
+deployment:
+  name: "wildkatze-dev"
+  replicas: 1
+  
+server:
+  host: "127.0.0.1"
+  port: 8000
+  workers: 1
+  reload: true
+  
+model:
+  path: "./models/checkpoints/latest"
+  quantization: null
+  max_batch_size: 4
+  
+security:
+  enable_auth: false
+  rate_limit: 1000
+  ssl_enabled: false
+  
+monitoring:
+  prometheus_enabled: true
+  metrics_port: 9090
+  logging_level: "DEBUG"

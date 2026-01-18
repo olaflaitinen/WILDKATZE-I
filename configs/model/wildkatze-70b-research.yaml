@@ -1,0 +1,26 @@
+# WILDKATZE-I 70B Research Model Configuration
+# Extended model for research environments
+
+model:
+  name: "wildkatze-70b-research"
+  version: "1.0.0"
+  
+architecture:
+  vocab_size: 128000
+  hidden_size: 8192
+  intermediate_size: 28672
+  num_hidden_layers: 80
+  num_attention_heads: 64
+  num_key_value_heads: 8
+  max_position_embeddings: 65536
+  rms_norm_eps: 1.0e-6
+  rope_theta: 500000.0
+  use_flash_attention: true
+
+precision:
+  training: "bfloat16"
+  inference: "bfloat16"
+
+specialized:
+  cultural_context_dim: 2048
+  psychographic_heads: 8

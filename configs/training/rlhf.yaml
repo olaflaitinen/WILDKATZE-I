@@ -1,0 +1,24 @@
+# RLHF Configuration
+
+training:
+  output_dir: "./models/rlhf"
+  num_train_epochs: 1
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 8
+  learning_rate: 5.0e-7
+  
+  bf16: true
+  gradient_checkpointing: true
+
+rlhf:
+  reward_model_path: "./models/reward_model"
+  kl_coef: 0.1
+  clip_range: 0.2
+  value_clip_range: 0.2
+  ppo_epochs: 4
+  mini_batch_size: 4
+  
+  # Generate settings
+  max_new_tokens: 512
+  temperature: 0.7
+  top_p: 0.9

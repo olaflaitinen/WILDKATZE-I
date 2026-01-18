@@ -1,0 +1,13 @@
+[MASTER]
+ignore=tests
+jobs=4
+
+[MESSAGES CONTROL]
+disable=C0111,R0903,W0511
+
+[FORMAT]
+max-line-length=100
+
+[DESIGN]
+max-args=10
+max-locals=20

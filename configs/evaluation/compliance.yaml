@@ -1,0 +1,29 @@
+# Compliance Configuration
+
+compliance:
+  ethical:
+    bias_threshold: 0.05
+    protected_attributes:
+      - race
+      - gender
+      - religion
+      - nationality
+      - ethnicity
+    fairness_metrics:
+      - demographic_parity
+      - equalized_odds
+      
+  legal:
+    geneva_conventions: true
+    gdpr_compliant: true
+    export_control_checked: true
+    
+  nato:
+    ajp_3_10_1: true
+    stanag_2022: true
+    stanag_2084: true
+    
+  audit:
+    logging_enabled: true
+    retention_days: 365
+    pii_redaction: true

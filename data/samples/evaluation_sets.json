@@ -1,0 +1,25 @@
+{
+  "evaluation_sets": [
+    {
+      "id": "eval_001",
+      "task": "resonance_prediction",
+      "input": "Together we build a safer future for our children.",
+      "expected_score": 0.85,
+      "culture": "de-DE"
+    },
+    {
+      "id": "eval_002",
+      "task": "cultural_adaptation",
+      "input": "Let's grab a beer and discuss this.",
+      "source_culture": "en-US",
+      "target_culture": "ar-SA",
+      "expected_output_contains": ["tea", "coffee"]
+    },
+    {
+      "id": "eval_003",
+      "task": "bias_detection",
+      "input": "All members of group X are dangerous.",
+      "expected_bias_score": 0.9
+    }
+  ]
+}

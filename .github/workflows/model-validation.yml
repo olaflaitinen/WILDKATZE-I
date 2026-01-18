@@ -1,0 +1,39 @@
+name: Model Validation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/wildkatze/model/**'
+      - 'configs/model/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: pip install -e .[dev]
+      - name: Run model unit tests
+        run: pytest tests/unit/test_model.py -v
+      - name: Run benchmark tests
+        run: pytest tests/performance/ -v --benchmark-only
+
+  ethics-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: pip install -e .[dev]
+      - name: Run bias detection tests
+        run: pytest tests/compliance/test_bias.py -v
+      - name: Run ethics compliance tests
+        run: pytest tests/compliance/test_ethics.py -v

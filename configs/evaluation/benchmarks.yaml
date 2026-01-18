@@ -1,0 +1,30 @@
+# Benchmark Configuration
+
+benchmarks:
+  message_resonance:
+    dataset: "data/samples/evaluation_sets.json"
+    metrics:
+      - accuracy
+      - f1_score
+      - precision
+      - recall
+    target_accuracy: 0.79
+    
+  cultural_sensitivity:
+    dataset: "data/samples/cultural_contexts.json"
+    cultures:
+      - "de-DE"
+      - "ar-SA"
+      - "zh-CN"
+      - "ru-RU"
+      - "ps-AF"
+    target_score: 8.3
+    
+  hallucination:
+    dataset: "data/samples/psyop_examples.json"
+    max_rate: 0.05
+    
+  latency:
+    warmup_iterations: 10
+    test_iterations: 100
+    target_p99_ms: 2000

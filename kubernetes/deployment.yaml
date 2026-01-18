@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wildkatze-api
+  namespace: wildkatze-prod
+  labels:
+    app: wildkatze-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: wildkatze-api
+  template:
+    metadata:
+      labels:
+        app: wildkatze-api
+    spec:
+      containers:
+      - name: api
+        image: wildkatze-api:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: "4"
+            memory: "8Gi"
+          requests:
+            cpu: "2"
+            memory: "4Gi"
+        livenessProbe:
+          httpGet:
+            path: /v1/health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /v1/health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        envFrom:
+        - configMapRef:
+            name: wildkatze-config
+        - secretRef:
+            name: wildkatze-secrets
+      - name: inference-sidecar
+        image: wildkatze-inference:latest
+        resources:
+          limits:
+            nvidia.com/gpu: 1

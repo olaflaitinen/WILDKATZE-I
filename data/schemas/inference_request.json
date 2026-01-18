@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Inference Request Schema",
+  "type": "object",
+  "required": ["prompt"],
+  "properties": {
+    "prompt": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 32768,
+      "description": "Input prompt"
+    },
+    "target_culture": {
+      "type": "string",
+      "pattern": "^[a-z]{2}-[A-Z]{2}$"
+    },
+    "max_new_tokens": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4096,
+      "default": 100
+    },
+    "temperature": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 0.7
+    },
+    "top_p": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.9
+    }
+  }
+}

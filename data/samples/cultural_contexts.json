@@ -1,0 +1,39 @@
+{
+  "cultures": [
+    {
+      "code": "de-DE",
+      "name": "German",
+      "values": ["punctuality", "efficiency", "directness", "privacy"],
+      "taboos": ["nazi_references", "informal_address_to_strangers"],
+      "communication_style": "low_context"
+    },
+    {
+      "code": "ar-SA",
+      "name": "Saudi Arabian",
+      "values": ["hospitality", "family", "honor", "religion"],
+      "taboos": ["left_hand_gestures", "alcohol_references", "pork"],
+      "communication_style": "high_context"
+    },
+    {
+      "code": "ps-AF",
+      "name": "Pashto (Afghanistan)",
+      "values": ["hospitality", "honor", "tribal_loyalty", "bravery"],
+      "taboos": ["insulting_elders", "public_shame"],
+      "communication_style": "high_context"
+    },
+    {
+      "code": "zh-CN",
+      "name": "Chinese (Simplified)",
+      "values": ["harmony", "face", "hierarchy", "collectivism"],
+      "taboos": ["direct_confrontation", "number_4"],
+      "communication_style": "high_context"
+    },
+    {
+      "code": "ru-RU",
+      "name": "Russian",
+      "values": ["strength", "resilience", "community", "tradition"],
+      "taboos": ["weakness_display", "empty_gestures"],
+      "communication_style": "medium_context"
+    }
+  ]
+}

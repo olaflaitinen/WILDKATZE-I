@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wildkatze-config
+  namespace: wildkatze-prod
+data:
+  MODEL_PATH: "/models/wildkatze-28b"
+  LOG_LEVEL: "INFO"
+  MAX_BATCH_SIZE: "32"
+  QUANTIZATION_MODE: "int8"
+  ENABLE_METRICS: "true"
+  METRICS_PORT: "9090"

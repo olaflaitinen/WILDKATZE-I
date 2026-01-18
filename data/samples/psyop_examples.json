@@ -1,0 +1,26 @@
+[
+  {
+    "id": "psyop_001",
+    "campaign": "Information Support",
+    "text": "Community support programs strengthen local governance and build trust between institutions and citizens.",
+    "target_audience": "general_population",
+    "culture": "de-DE",
+    "resonance_score": 0.82
+  },
+  {
+    "id": "psyop_002", 
+    "campaign": "Counter-Narrative",
+    "text": "Verified information from official sources protects communities from misinformation.",
+    "target_audience": "youth",
+    "culture": "en-US",
+    "resonance_score": 0.75
+  },
+  {
+    "id": "psyop_003",
+    "campaign": "Strategic Communication",
+    "text": "International cooperation ensures regional stability and shared prosperity.",
+    "target_audience": "business_leaders",
+    "culture": "ar-SA",
+    "resonance_score": 0.68
+  }
+]

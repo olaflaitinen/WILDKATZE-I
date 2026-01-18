@@ -1,0 +1,11 @@
+# CODEOWNERS for WILDKATZE-I
+# Default owners for everything in the repo
+* @olaflaitinen
+
+# Model architecture
+/src/wildkatze/model/ @olaflaitinen
+
+# Security-related files
+/src/wildkatze/utils/security.py @olaflaitinen
+/.github/workflows/security-scan.yml @olaflaitinen
+/SECURITY.md @olaflaitinen

@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Training Data Schema",
+  "type": "object",
+  "required": ["text"],
+  "properties": {
+    "text": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Training text content"
+    },
+    "culture": {
+      "type": "string",
+      "pattern": "^[a-z]{2}-[A-Z]{2}$",
+      "description": "Culture code (e.g., de-DE)"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["psyop", "cultural", "military", "social"],
+      "description": "Content category"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "source": {"type": "string"},
+        "date": {"type": "string", "format": "date"}
+      }
+    }
+  }
+}
